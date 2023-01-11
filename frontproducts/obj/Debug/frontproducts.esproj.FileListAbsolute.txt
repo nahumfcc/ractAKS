@@ -1,0 +1,2 @@
+C:\demos\ReactAKS\ReactAKS\frontProducts\obj\Debug\frontproducts.esproj.SuggestedBindingRedirects.cache
+C:\demos\ReactAKS\ReactAKS\frontProducts\obj\Debug\frontproducts.esproj.CoreCompileInputs.cache
