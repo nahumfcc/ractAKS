@@ -1,8 +1,12 @@
 import { React, useState, useEffect } from 'react'
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
+import { PRODUCT_URL } from '../helpers/helpServiceUrl';
+import { useDispatch } from 'react-redux';
+import { createAction, updateAction } from '../actions/crudActions';
 
 function ProductForm() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const [product, setProduct] = useState({ name: '', description: '', price:0 });
 
@@ -26,8 +30,8 @@ function ProductForm() {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(product)
                 };
-                const response = await fetch('https://localhost:7258/api/product/' + product.id, requestOptions);
-                console.log(response);
+                const response = await fetch(PRODUCT_URL + product.id, requestOptions);
+                dispatch(updateAction(product));
             }
             updateProduct({ ...product, id: params.id });
         } else {
@@ -38,8 +42,9 @@ function ProductForm() {
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(product)
                 };
-                const response = await fetch('https://localhost:7258/api/product/', requestOptions);
+                const response = await fetch(PRODUCT_URL, requestOptions);
                 const data = await response.json();
+                dispatch(createAction(data));
             }
             createProduct(product);
         }
@@ -50,7 +55,7 @@ function ProductForm() {
     useEffect(() => {
         if (params.id) {
             const getProduct = async (id) => {
-                const response = await fetch('https://localhost:7258/api/product/' + id);
+                const response = await fetch(PRODUCT_URL + id);
                 const data = await response.json();
                 setProduct(data);
             }
@@ -61,10 +66,46 @@ function ProductForm() {
 
     return (
         <form onSubmit={nuevoProducto}>
-            <input name='name' placeholder='Nombre' onChange={handleChange} value={product.name} autoFocus />
-            <textarea name='description' placeholder='Descripcion' onChange={handleChange} value={product.description} />
-            <input type='number' name='price' placeholder='Precio' onChange={handleChange} value={product.price} autoFocus />
-            <button>Guardar</button>
+            <div className="container">
+                <div className="row">
+                    {product.id ? (<h3>Editar producto</h3>) : (<h3>Crear producto</h3>)}
+                </div>
+                <div className="row">
+                    <div className="col-2">
+                        <label>Nombre del producto:</label>
+                    </div>
+                    <div className="col-4">
+                        <input name='name' placeholder='Nombre' onChange={handleChange} value={product.name} autoFocus />
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-2">
+                        <label>Detalle del producto:</label>
+                    </div>
+                    <div className="col-4">
+                        <textarea name='description' placeholder='Descripcion' onChange={handleChange} value={product.description} />
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col-2">
+                        <label>Precio:</label>
+                    </div>
+                    <div className="col-4">
+                        <input type='number' name='price' placeholder='Precio' onChange={handleChange} value={product.price} autoFocus />
+                    </div>
+                </div>
+
+                <div className="row d-flex justify-content-left">
+                    <div className="col-1">
+                        <Link to="/"><button>Regresar</button></Link>
+                    </div>
+                    <div className="col-1">
+                        <button>Guardar</button>
+                    </div>
+                </div>                
+            </div>
         </form>
     )
 }

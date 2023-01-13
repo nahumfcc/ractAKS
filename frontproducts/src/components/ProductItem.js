@@ -1,14 +1,19 @@
 import { Link, useNavigate } from 'react-router-dom';
+import { PRODUCT_URL } from '../helpers/helpServiceUrl';
+import { useDispatch } from 'react-redux';
+import { deleteAction } from '../actions/crudActions';
 
 function ProductItem({ product }) {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     function eliminarProducto(id) {
         //var confirmDelete = confirm("Se eliminará el producto con id " + id);
         //if (confirmDelete) {
-            const deleteProduct = async (id) => {
-                const response = await fetch('https://localhost:7258/api/product/'+id, { method: 'DELETE' });
-                if (response.ok) {
+        const deleteProduct = async (id) => {
+            const response = await fetch(PRODUCT_URL + id, { method: 'DELETE' });
+            if (response.ok) {
+                dispatch(deleteAction(id));
                     navigate('/');
                 }
             }
@@ -19,9 +24,9 @@ function ProductItem({ product }) {
         <td>{product.name}</td>
         <td>{product.description}</td>
         <td>{product.price}</td>
-        <td>
-            <button onClick={() => eliminarProducto(product.id)}>Eliminar</button>
+        <td className="d-flex justify-content-around">
             <Link to={`/edit-product/${product.id}`}><button>Editar</button></Link>
+            <button onClick={() => eliminarProducto(product.id)}>Eliminar</button>
         </td>
     </tr>
 }

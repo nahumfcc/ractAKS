@@ -1,35 +1,51 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
 import ProductItem from './ProductItem';
 import { Link } from 'react-router-dom';
+import { PRODUCT_URL } from '../helpers/helpServiceUrl';
+import { readAllAction } from '../actions/crudActions';
+import Loader from '../common/Loader'
 
 function Product() {
 
-    let url = "https://localhost:7258/api/product";
+    const state = useSelector(state => state);
+    const dispatch = useDispatch();
+    const { localDb } = state.crud;
 
-    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const getProducts = async () => {
-            const response = await fetch('https://localhost:7258/api/product/');
-            const data = await response.json();
-            setProducts(data);
+            console.log("Obtiene productos")
+            setLoading(true);
+            const response = await fetch(PRODUCT_URL);
+            const json = await response.json();
+            dispatch(readAllAction(json));
+            setLoading(false);
         }
         getProducts();
     }, []);
 
     return (<>
-        <Link to={'/create-product'}><button>Agregar</button></Link>
-        {products.length === 0 ? (<h3>Cargando...</h3>) : (
+        <div className="d-flex justify-content-end">
+            <Link to={'/create-product'}><button>Agregar</button></Link>
+        </div>
+        
+        {loading && <Loader />}
+        {localDb && (
             <>
                 <table>
                     <thead>
                         <ProductHeader />
                     </thead>
                     <tbody>
-                        {products.map(product => <ProductItem key={product.id} product={product} />)}
+                        {localDb.map(product => <ProductItem key={product.id} product={product} />)}
                     </tbody>
                 </table>
-                <p>Productos activos {products.length}</p>
+                <div className="d-flex justify-content-end">
+                    <p>Productos activos {localDb.length}</p>
+                </div>
             </>
         )}
     </>

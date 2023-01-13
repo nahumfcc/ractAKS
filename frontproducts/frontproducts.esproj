@@ -14,5 +14,10 @@
   <ItemGroup>
     <Folder Include="src\components\" />
     <Folder Include="src\helpers\" />
+    <Folder Include="src\common\" />
+    <Folder Include="src\actions\" />
+    <Folder Include="src\store\" />
+    <Folder Include="src\reducers\" />
+    <Folder Include="src\types\" />
   </ItemGroup>
 </Project>

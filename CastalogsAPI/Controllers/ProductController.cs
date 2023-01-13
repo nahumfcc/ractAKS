@@ -101,7 +101,7 @@ namespace CatalogsAPI.Controllers
             await _context.SaveChangesAsync();
 
             //return CreatedAtAction("GetProductItem", new { id = productItem.Id }, productItem);
-            return CreatedAtAction(nameof(GetProductItem), new { id = newProduct.Id }, productItem);
+            return CreatedAtAction(nameof(GetProductItem), new { id = newProduct.Id }, newProduct);
 
         }
 
