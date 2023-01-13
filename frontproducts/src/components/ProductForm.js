@@ -28,8 +28,6 @@ function ProductForm() {
                 };
                 const response = await fetch('https://localhost:7258/api/product/' + product.id, requestOptions);
                 console.log(response);
-                navigate('/');
-
             }
             updateProduct({ ...product, id: params.id });
         } else {
@@ -42,8 +40,6 @@ function ProductForm() {
                 };
                 const response = await fetch('https://localhost:7258/api/product/', requestOptions);
                 const data = await response.json();
-                navigate('/');
-                
             }
             createProduct(product);
         }

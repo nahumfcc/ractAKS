@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatalogsAPI", "CastalogsAPI\CatalogsAPI.csproj", "{BB7CD29D-CD8F-4605-9A6B-AB63C085FD44}"
 EndProject
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "frontproducts", "frontProducts\frontproducts.esproj", "{11A6F14D-37E9-4E73-BAEA-E935A7729F3E}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "frontproducts", "frontproducts\frontproducts.esproj", "{11A6F14D-37E9-4E73-BAEA-E935A7729F3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

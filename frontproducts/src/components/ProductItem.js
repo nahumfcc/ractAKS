@@ -4,8 +4,8 @@ function ProductItem({ product }) {
     const navigate = useNavigate()
 
     function eliminarProducto(id) {
-        var confirmDelete = confirm("Se eliminará el producto con id " + id);
-        if (confirmDelete) {
+        //var confirmDelete = confirm("Se eliminará el producto con id " + id);
+        //if (confirmDelete) {
             const deleteProduct = async (id) => {
                 const response = await fetch('https://localhost:7258/api/product/'+id, { method: 'DELETE' });
                 if (response.ok) {
@@ -13,7 +13,7 @@ function ProductItem({ product }) {
                 }
             }
             deleteProduct(id);
-        }
+        //}
     }
     return <tr key={product.id}>
         <td>{product.name}</td>
