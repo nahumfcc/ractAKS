@@ -8,6 +8,7 @@ import Menu from './components/Menu';
 import store from './store/index';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
+import Login from './components/Login';
 
 function App() {
     return (
@@ -28,6 +29,7 @@ function App() {
                                     <Route path='/create-product' element={<ProductForm />} />
                                     <Route path='/edit-product/:id' element={<ProductForm />} />
                                     <Route path='/user' element={<Usuario />} />
+                                    <Route path='/login' element={<Login />} />
                                 </Routes>
                             </div>
                         </div>

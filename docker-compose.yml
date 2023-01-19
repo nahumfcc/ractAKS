@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  catalogsapi:
+    image: ${DOCKER_REGISTRY-}catalogsapi
+    build:
+      context: .
+      dockerfile: CastalogsAPI/Dockerfile

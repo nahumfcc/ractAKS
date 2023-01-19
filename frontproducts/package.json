@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@redux-devtools/extension": "^3.2.4",
+    "axios": "^1.2.3",
     "bootstrap": "^5.2.3",
     "eslint-config-react-app": "^7.0.1",
     "jest-editor-support": "^30.3.1",

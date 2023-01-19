@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "p4FE4pOvlLzKcCo1pdKEyLRcNeA/+3YWp3ySCiFKaI3XRdh1N9RtK82HIAv5tSRbyNxmwmrApXffbRVnsqx7PA==",
+  "dgSpecHash": "gD0RFPd//Mf0o9yWylw+PKbBIN9Vg5OdIWvFjFnmOeONB0tt7pB6siYIERQBxv5AMxQIu5xKbMPN+DTHzokHIg==",
   "success": true,
   "projectFilePath": "C:\\demos\\ReactAKS\\ReactAKS\\CastalogsAPI\\CatalogsAPI.csproj",
   "expectedPackageFiles": [
@@ -65,6 +65,7 @@
     "C:\\Users\\nahum\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
     "C:\\Users\\nahum\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
     "C:\\Users\\nahum\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\nahum\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
     "C:\\Users\\nahum\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\7.0.1\\microsoft.visualstudio.web.codegeneration.7.0.1.nupkg.sha512",
     "C:\\Users\\nahum\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\7.0.1\\microsoft.visualstudio.web.codegeneration.core.7.0.1.nupkg.sha512",
     "C:\\Users\\nahum\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.design\\7.0.1\\microsoft.visualstudio.web.codegeneration.design.7.0.1.nupkg.sha512",
