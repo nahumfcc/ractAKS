@@ -9,7 +9,7 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "frontproducts", "frontprodu
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C6A53486-1C3A-4FE7-9665-A635FE82BE0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersAPI", "..\UsersAPI\UsersAPI.csproj", "{0F51ACF3-1904-46CA-90B8-80A20ACEBFA0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsersAPI", "UsersAPI\UsersAPI.csproj", "{0F51ACF3-1904-46CA-90B8-80A20ACEBFA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
