@@ -150,3 +150,4 @@ C:\demos\ReactAKS\ReactAKS\UsersAPI\obj\Debug\net7.0\refint\UsersAPI.dll
 C:\demos\ReactAKS\ReactAKS\UsersAPI\obj\Debug\net7.0\UsersAPI.pdb
 C:\demos\ReactAKS\ReactAKS\UsersAPI\obj\Debug\net7.0\UsersAPI.genruntimeconfig.cache
 C:\demos\ReactAKS\ReactAKS\UsersAPI\obj\Debug\net7.0\ref\UsersAPI.dll
+C:\demos\ReactAKS\ReactAKS\UsersAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.InMemory.dll

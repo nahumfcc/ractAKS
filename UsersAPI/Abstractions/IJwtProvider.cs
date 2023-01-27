@@ -4,6 +4,8 @@ namespace UsersAPI.Abstractions
 {
     public interface IJwtProvider
     {
-        string Generate(LoginRequest request);
+        UserResponse Generate(User request);
+
+        UserResponse Refresh(RequestToken request);
     }
 }
