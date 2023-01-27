@@ -16,6 +16,9 @@
     <Folder Include="src\helpers\" />
     <Folder Include="src\common\" />
     <Folder Include="src\actions\" />
+    <Folder Include="src\api\" />
+    <Folder Include="src\context\" />
+    <Folder Include="src\hooks\" />
     <Folder Include="src\store\" />
     <Folder Include="src\reducers\" />
     <Folder Include="src\types\" />

@@ -1,7 +1,18 @@
 import { useState } from "react";
-import axios from "axios";
+import useAuth from '../hooks/useAuth';
+import axios from '../api/axios'
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+
+const LOGIN_URL = '/User/login';
 
 function Login() {
+
+    const { setAuth } = useAuth();
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
 
     const [datos, setDatos] = useState({
         email: "",
@@ -13,15 +24,27 @@ function Login() {
         let newDatos = { ...datos, [name]: value };
         setDatos(newDatos);
     }
-
+    //30OFF--dXbGZm
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(datos);
         if (!e.target.checkValidity()) {
             console.log("no enviar");
         } else {
-            let res = await axios.post("https://localhost:7283/User", datos);
-            console.log(res.data);
+            try {
+                const response = await axios.post(LOGIN_URL,
+                    datos,
+                    {
+                        headers: { 'Content-TYpe': 'application/json' }
+                    }
+                );
+                const token = response?.data?.token;
+                const refreshToken = response?.data?.refreshToken;
+
+                setAuth({ email: datos.email, token, refreshToken });
+                navigate(from, { replace: true });
+            } catch (err) {
+                console.log(!err?.response);
+            }
         }
     };
 
@@ -44,9 +67,6 @@ function Login() {
                                     <div className="mb-3">
                                         <div className="mb-2 w-100">
                                             <label className="text-muted" htmlFor="password">Contraseña</label>
-                                            <a href="/" className="float-end">
-                                                ¿Olvidaste tu contraseña?
-                                            </a>
                                         </div>
                                         <input id="password" type="password" onChange={handleInputChange} value={datos.password} className="form-control" name="password" required />
                                         <div className="invalid-feedback">
@@ -64,6 +84,14 @@ function Login() {
                                     </div>
                                 </form>
                             </div>
+                            <p>
+                                Quieres registrarte?<br />
+                                <span className="line">
+                                    <Link to="/register">
+                                        <a href="#">Si</a>
+                                    </Link>
+                                </span>
+                            </p>
                             <div className="card-footer py-3 border-0">
                                 <div className="text-center">
                                     Copyright &#169; Nahum {new Date().getFullYear()}
@@ -73,6 +101,7 @@ function Login() {
                     </div>
                 </div>
             </div>
+            
         </section>
     );
 }

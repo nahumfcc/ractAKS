@@ -4,11 +4,23 @@ import App from './App';
 import './index.css';
 import OldApp from './OldApp';
 import reportWebVitals from './reportWebVitals';
+import { AuthProvider } from './context/AuthProvider'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Register from './components/Register';
+import Login from './components/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <App />
+        <BrowserRouter>
+            <AuthProvider>
+                <Routes>
+                    <Route path='/*' element={<App />} />
+                    <Route path='/login' element={<Login />} />
+                    <Route path='/register' element={<Register />} />
+                </Routes>
+            </AuthProvider>
+        </BrowserRouter>
   </React.StrictMode>
 );
 
