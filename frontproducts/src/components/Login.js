@@ -66,7 +66,7 @@ function Login() {
                                     </div>
                                     <div className="mb-3">
                                         <div className="mb-2 w-100">
-                                            <label className="text-muted" htmlFor="password">Contraseña</label>
+                                            <label className="text-muted" htmlFor="password">Contrase&ntilde;a</label>
                                         </div>
                                         <input id="password" type="password" onChange={handleInputChange} value={datos.password} className="form-control" name="password" required />
                                         <div className="invalid-feedback">
@@ -88,7 +88,7 @@ function Login() {
                                 Quieres registrarte?<br />
                                 <span className="line">
                                     <Link to="/register">
-                                        <a href="#">Si</a>
+                                        Si
                                     </Link>
                                 </span>
                             </p>

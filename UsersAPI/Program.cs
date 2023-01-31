@@ -25,7 +25,7 @@ builder.Services.AddCors(options =>
                                             "https://localhost",
                                             "http://localhost")
                         .WithMethods("PUT", "DELETE", "GET", "POST")
-                        .WithHeaders("Content-Type", "Access-Control-Allow-Headers");
+                        .WithHeaders("Content-Type", "Access-Control-Allow-Headers", "Authorization");
                     });
 });
 

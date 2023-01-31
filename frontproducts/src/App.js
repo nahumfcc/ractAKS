@@ -33,8 +33,9 @@ function App() {
                                         <Route path='/products' element={<Product />} />
                                         <Route path='/create-product' element={<ProductForm />} />
                                         <Route path='/edit-product/:id' element={<ProductForm />} />
+
+                                        <Route path='/user' element={<Usuario />} />
                                     </Route>
-                                    <Route path='/user' element={<Usuario />} />
                                     <Route path='*' element={<NotFound />} />
                                 </Route>
                                 </Routes>

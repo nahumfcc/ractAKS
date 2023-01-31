@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from '../api/axios'
+import { Link } from 'react-router-dom';
 
 const EMAIL_REGEX = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -80,7 +81,7 @@ function Register() {
             <section>
                 <h1>Registro existoso!</h1>
                 <p>
-                    <a href="#">Login</a>
+                    <a href="/login">Login</a>
                 </p>
             </section>
         ): (
@@ -153,12 +154,12 @@ function Register() {
             }
 
             <br />
-            <label htmlFor="password">
+            <label htmlFor="match-password">
                 Confirmar contrase&ntilde;a:
             </label>
             <input
                 type="password"
-                id="password"
+                id="match-password"
                 onChange={(e) => setMatchPassword(e.target.value)}
                 required
                 aria-invalid={validMatchPassword ? "false" : "true"}
@@ -191,8 +192,8 @@ function Register() {
         </form>
         <p>
             Ya estas registrado?<br />
-            <span className='line'>
-                <a href="#">Login</a>
+                        <span className='line'>
+                            <Link to="/login">Login</Link>                
             </span>
         </p>
     </section >
