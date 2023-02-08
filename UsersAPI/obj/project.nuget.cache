@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IozjAsErNjgnTc+8hVtdT1F6+T4sUAtDi84tpLcnkL85GcYUiwIVlTsiFHA27qtcfp30GBiRvMMPiEA5ahfFrA==",
+  "dgSpecHash": "16PaiCgAa9G4dORclfwgtOPBj2mDVXu1DDeHE20rAgsFSZSukVqVqTK0VO6Muv1ULDPMwogqIDmVPMQ77bk61Q==",
   "success": true,
   "projectFilePath": "C:\\demos\\ReactAKS\\ReactAKS\\UsersAPI\\UsersAPI.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,7 @@
     "C:\\Users\\nahum\\.nuget\\packages\\microsoft.netcore.platforms\\3.0.0\\microsoft.netcore.platforms.3.0.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\nahum\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\nahum\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\nahum\\.nuget\\packages\\microsoft.win32.systemevents\\4.6.0\\microsoft.win32.systemevents.4.6.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",

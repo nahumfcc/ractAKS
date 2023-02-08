@@ -12,6 +12,7 @@ import Register from './components/Register';
 import Layout from './components/Layout';
 import NotFound from './components/NotFound';
 import RequireAuth from './components/RequireAuth';
+import PersistLogin from './components/PersistLogin'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -29,13 +30,19 @@ function App() {
                             <div className="col">
                                 <Routes>
                                 <Route path='/' element={<Layout />} >
-                                    <Route element={<RequireAuth />}>
-                                        <Route path='/products' element={<Product />} />
-                                        <Route path='/create-product' element={<ProductForm />} />
-                                        <Route path='/edit-product/:id' element={<ProductForm />} />
 
-                                        <Route path='/user' element={<Usuario />} />
+                                    {/*Rutas protegidas*/}
+                                    <Route element={<RequireAuth/>}>
+                                        <Route element={<PersistLogin />}>
+                                            <Route path='/products' element={<Product />} />
+                                            <Route path='/create-product' element={<ProductForm />} />
+                                            <Route path='/edit-product/:id' element={<ProductForm />} />
+
+                                            <Route path='/user' element={<Usuario />} />
+                                        </Route>
                                     </Route>
+
+                                    {/*Rutas publicas*/}
                                     <Route path='*' element={<NotFound />} />
                                 </Route>
                                 </Routes>

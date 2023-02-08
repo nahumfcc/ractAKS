@@ -1,8 +1,24 @@
 version: '3.4'
 
 services:
+  frontproducts:
+    image: frontproducts
+    ports:
+      - 8000:80
+    build:
+      context: .
+      dockerfile: frontproducts/Dockerfile
+
   catalogsapi:
     image: ${DOCKER_REGISTRY-}catalogsapi
     build:
       context: .
       dockerfile: CastalogsAPI/Dockerfile
+
+  usersapi:
+    image: ${DOCKER_REGISTRY-}usersapi
+    build:
+      context: .
+      dockerfile: UsersAPI/Dockerfile
+
+  
