@@ -1,0 +1,91 @@
+name: dockercompose1925358474693630076
+services:
+  catalogsapi:
+    build:
+      context: C:\demos\ReactAKS\ReactAKS
+      dockerfile: CastalogsAPI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: catalogsapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8001"
+      protocol: tcp
+    - mode: ingress
+      target: 443
+      protocol: tcp
+    - mode: ingress
+      target: 8001
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: C:\Users\nahum\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\nahum\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+  frontproducts:
+    build:
+      context: C:\demos\ReactAKS\ReactAKS
+      dockerfile: frontproducts/Dockerfile
+    image: frontproducts
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+    - mode: ingress
+      target: 80
+      published: "8000"
+      protocol: tcp
+    - mode: ingress
+      target: 8000
+      protocol: tcp
+  usersapi:
+    build:
+      context: C:\demos\ReactAKS\ReactAKS
+      dockerfile: UsersAPI/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: usersapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "8002"
+      protocol: tcp
+    - mode: ingress
+      target: 443
+      protocol: tcp
+    - mode: ingress
+      target: 8002
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: C:\Users\nahum\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\nahum\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+networks:
+  default:
+    name: dockercompose1925358474693630076_default

@@ -11,12 +11,16 @@ services:
 
   catalogsapi:
     image: ${DOCKER_REGISTRY-}catalogsapi
+    ports:
+      - 8001:80
     build:
       context: .
       dockerfile: CastalogsAPI/Dockerfile
 
   usersapi:
     image: ${DOCKER_REGISTRY-}usersapi
+    ports:
+      - 8002:80
     build:
       context: .
       dockerfile: UsersAPI/Dockerfile
