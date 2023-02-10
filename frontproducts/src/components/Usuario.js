@@ -15,7 +15,7 @@ const Usuario = () => {
 
         const getUsers = async () => {
             try {
-                const response = await axiosPrivate.get('/User', {
+                const response = await axiosPrivate.get('', {
                     signal: controller.signal
                 });
                 isMounted && setUsers(response.data);

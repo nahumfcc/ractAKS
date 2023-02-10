@@ -1,1 +1,1 @@
-export const PRODUCT_URL = "https://localhost:7258/api/product/";
+export const PRODUCT_URL = process.env.REACT_APP_API_CATALOGOS;

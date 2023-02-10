@@ -3,6 +3,13 @@ FROM node:12-alpine3.12 as build
 WORKDIR /app
 COPY frontproducts/package.json ./
 RUN npm install
+
+ARG REACT_APP_API_CATALOGOS
+ARG REACT_APP_API_USUARIOS
+
+ENV REACT_APP_API_CATALOGOS $REACT_APP_API_CATALOGOS
+ENV REACT_APP_API_USUARIOS $REACT_APP_API_USUARIOS
+
 COPY frontproducts/ ./
 WORKDIR /app
 RUN npm run build

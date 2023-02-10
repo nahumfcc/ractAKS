@@ -6,7 +6,7 @@ const useRefreshToken = () => {
 
     const refresh = async () => {
         try {
-            const response = await axios.post('/User/refresh',
+            const response = await axios.post('/refresh',
                 {
                     token:  auth?.token,
                     refreshToken: auth?.refreshToken

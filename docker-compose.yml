@@ -7,6 +7,9 @@ services:
       - 8000:80
     build:
       context: .
+      args:
+        REACT_APP_API_CATALOGOS: http://localhost:8001/api/Product
+        REACT_APP_API_USUARIOS: http://localhost:8002/User
       dockerfile: frontproducts/Dockerfile
 
   catalogsapi:

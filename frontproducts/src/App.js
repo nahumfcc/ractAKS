@@ -21,7 +21,9 @@ function App() {
             <Provider store={store}>
                 <div className="container">
                         <h1 className="d-flex justify-content-center">
-                            Administracion de productos
+                        Administracion de Productos
+                        <br />
+                        {process.env.REACT_APP_API_CATALOGOS }
                         </h1>
                         <div className="row">
                             <div className="col-md-auto">

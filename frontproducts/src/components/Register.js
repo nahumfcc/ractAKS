@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const EMAIL_REGEX = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const REGISTER_URL = '/User/register';
+const REGISTER_URL = '/register';
 
 function Register() {
     const emailRef = useRef();
